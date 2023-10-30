@@ -1,0 +1,13 @@
+[submodule "thirdparty/raw_pdb"]
+	path = thirdparty/raw_pdb
+	url = https://github.com/punpckhdq/raw_pdb.git
+	branch = vc60
+[submodule "thirdparty/xxHash"]
+	path = thirdparty/xxHash
+	url = https://github.com/Cyan4973/xxHash.git
+[submodule "thirdparty/ELFIO"]
+	path = thirdparty/ELFIO
+	url = https://github.com/serge1/ELFIO.git
+[submodule "thirdparty/zydis"]
+	path = thirdparty/zydis
+	url = https://github.com/zyantific/zydis.git

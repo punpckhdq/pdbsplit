@@ -1,0 +1,35 @@
+add_executable(pdbsplit
+	memory/static_string.cc
+	memory/static_string.hh
+	memory/memory_mapped_file.cc
+	memory/memory_mapped_file.hh
+	chunks/chunk.cc
+	chunks/chunk.hh
+	exe/exe_file.cc
+	exe/exe_file.hh
+	xbe/xbe_file.cc
+	xbe/xbe_file.hh
+	pdb/pdb_file.cc
+	pdb/pdb_file.hh
+	split/objects.cc
+	split/objects.hh
+	split/split_project.cc
+	split/split_project.hh
+	split/split_writer.cc
+	split/split_writer.hh
+	main.cc
+	pch.hh)
+
+target_precompile_headers(pdbsplit
+	PRIVATE
+	"$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/pch.hh>")
+
+target_link_libraries(pdbsplit
+	PRIVATE
+	raw_pdb
+	elfio
+	Zydis
+	xxhash)
+
+set_property(TARGET pdbsplit
+	PROPERTY CXX_STANDARD 20)
